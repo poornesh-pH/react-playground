@@ -10,6 +10,8 @@ export default function Playground() {
       {getTown(staticObj.town)}
       {staticObj.age > 18 ? <p>{staticObj.age}</p> : "Under 18"}
       {/* {staticArr} */}
+      <p>First name : {arrowFunction("poornesh")}</p>
+      <p>First name and Age : {arrowFunction("poornesh", 23)}</p>
     </div>
   );
 }
@@ -36,7 +38,5 @@ function getTown(town) {
 }
 
 const arrowFunction = (name, age) => {
-  return age ? name + " " + age : name;
+  return age ? name + " " + age : name.split(" ")[0];
 };
-console.log(arrowFunction("poornesh", 23));
-console.log(arrowFunction("abi"));
