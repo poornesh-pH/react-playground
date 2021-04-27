@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
-import Todof from "./todof.js";
-import Todoc from "./todoc.js";
+import Todof from "./todof";
+import Todoc from "./todoc";
 import Playground from "./playground";
 export default function App() {
   return (
