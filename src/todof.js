@@ -4,7 +4,6 @@ export default function Todo() {
   const [title, setTitle] = useState();
   const [titlebool, setTitlebool] = useState(true);
   const [again, setAgain] = useState("");
-  const [items, setItems] = useState([]);
   const titleChange = () => {
     setTitlebool(!titlebool);
     console.log(titlebool);
@@ -19,7 +18,7 @@ export default function Todo() {
 
   function addTodo(e) {
     e.preventDefault();
-    setItems();
+    // setItems();
   }
   return (
     <div>
@@ -31,7 +30,6 @@ export default function Todo() {
         <input type="text" name="item" id="item" />
         <input type="submit" value="Submit" />
       </form>
-      {/* <p>{items}</p> */}
     </div>
   );
 }

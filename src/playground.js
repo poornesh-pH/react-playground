@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export default function Playground() {
+  let [arr, setArr] = useState([]);
+  function printArray() {
+    return arr.map(item => <p key={item}>{item}</p>);
+  }
+  function formOnSubmit(e) {
+    // console.log("inside form action");
+    e.preventDefault();
+    // staticArr.push(e.target.elements.name.value);
+    // console.log('After push',staticArr)
+    // staticArr.pop(e.target.elements.name.value);
+    // console.log('After pop',staticArr);
+    // setArr([...arr],e.target.elements.name.value);
+
+    setArr([...arr, e.target.elements.name.value]);
+    e.target.elements.name.value = "";
+  }
+  function resetForm() {
+    setArr([]);
+  }
   return (
     <div>
       <h1>Playground</h1>
@@ -57,6 +76,18 @@ export default function Playground() {
         </button>
         <hr />
       </span>
+      <span>
+        <i>Array Operation using useState</i>
+        <br />
+        <br />
+        <form onSubmit={formOnSubmit}>
+          <input type="text" id="name" />
+          <button type="submit">Submit</button>
+          <button onClick={resetForm}>Reset</button>
+        </form>
+        {printArray()}
+      </span>
+      <hr />
     </div>
   );
 }
@@ -75,13 +106,10 @@ let staticObj = {
   town: "Sathy"
 };
 
-let staticArr = ["Name 1", "Name 2", "Name 3"];
-
 function getTown(town) {
   if (town) return <p>{town}</p>;
   else return "Unknown";
 }
-
 const arrowFunction = (name, age) => {
   return age ? name + " " + age : name.split(" ")[0];
 };
