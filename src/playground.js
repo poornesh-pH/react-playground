@@ -21,6 +21,11 @@ export default function Playground() {
   function resetForm() {
     setArr([]);
   }
+  let [randomVal, setRandomVal] = useState(null);
+  const randomOption = () => {
+    setRandomVal(arr[Math.floor(Math.random() * arr.length)]);
+    console.log(randomVal);
+  };
   return (
     <div>
       <h1>Playground</h1>
@@ -82,9 +87,13 @@ export default function Playground() {
         <br />
         <form onSubmit={formOnSubmit}>
           <input type="text" id="name" />
+          {arr.length > 0 && randomVal}
+          <br />
+          <br />
           <button type="submit">Submit</button>
-          <button onClick={resetForm}>Reset</button>
         </form>
+        <button onClick={randomOption}>Choose 1</button>
+        <button onClick={resetForm}>Reset</button>
         {printArray()}
       </span>
       <hr />

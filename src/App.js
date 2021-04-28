@@ -3,6 +3,7 @@ import "./style.css";
 import Todof from "./todof";
 import Todoc from "./todoc";
 import Playground from "./playground";
+import Playground2 from './playground2';
 export default function App() {
   return (
     <div>
@@ -10,7 +11,7 @@ export default function App() {
       <Todof />
       <Todoc />
       <Playground />
-      <div id="indecision" />
+      <Playground2 />
     </div>
   );
 }
