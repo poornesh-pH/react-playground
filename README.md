@@ -1,3 +1,1 @@
-# react-jjcmsg
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-playg)
+https://react-playg.stackblitz.io
