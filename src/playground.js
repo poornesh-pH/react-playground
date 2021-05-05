@@ -3,6 +3,14 @@ import "./style.css";
 
 export default function Playground() {
   let [arr, setArr] = useState([]);
+  let [count, setCount] = useState(0);
+  const buttonClick = num => {
+    num == 0
+      ? setCount(0)
+      : num > 0
+      ? setCount((count = count + 1))
+      : setCount((count = count - 1));
+  };
   function printArray() {
     return arr.map(item => <p key={item}>{item}</p>);
   }
@@ -68,6 +76,7 @@ export default function Playground() {
         <button id="add" onClick={() => buttonClick(-1)}>
           -1
         </button>
+        {count}
         <button id="sub" onClick={() => buttonClick(1)}>
           +1
         </button>
@@ -132,9 +141,4 @@ const multiplier = {
   customMultiply(numbers, multiplyBy) {
     return numbers.map(number => number * multiplyBy);
   }
-};
-let count = 0;
-const buttonClick = num => {
-  num == 0 ? (count = 0) : num > 0 ? count++ : count--;
-  console.log(count);
 };
